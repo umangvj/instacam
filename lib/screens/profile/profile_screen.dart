@@ -5,6 +5,7 @@ import 'package:flutter_instagram/blocs/blocs.dart';
 import 'package:flutter_instagram/cubits/cubits.dart';
 import 'package:flutter_instagram/repositories/repositories.dart';
 import 'package:flutter_instagram/screens/profile/widgets/widgets.dart';
+import 'package:flutter_instagram/screens/screens.dart';
 import 'package:flutter_instagram/widgets/widgets.dart';
 import 'bloc/profile_bloc.dart';
 
@@ -162,7 +163,10 @@ class _ProfileScreenState extends State<ProfileScreen>
                           final post = state.posts[index];
                           print(post);
                           return GestureDetector(
-                            onTap: () {},
+                            onTap: () => Navigator.of(context).pushNamed(
+                              CommentsScreen.routeName,
+                              arguments: CommentsScreenArgs(post: post),
+                            ),
                             child: CachedNetworkImage(
                               imageUrl: post.imageUrl,
                               fit: BoxFit.cover,

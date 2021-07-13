@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_instagram/enums/enums.dart';
 import 'package:meta/meta.dart';
 import 'package:flutter_instagram/config/paths.dart';
 import 'package:flutter_instagram/repositories/repositories.dart';
@@ -57,6 +58,17 @@ class UserRepository extends BaseUserRepository {
         .set({});
     //to increase the count of following and followers we will write cloud functions
     //in firebase as it is safer than writing it here.
+
+    final notification = Notif(
+      type: NotifType.follow,
+      fromUser: User.empty.copyWith(id: userId),
+      date: DateTime.now(),
+    );
+    _firebaseFirestore
+        .collection(Paths.notifications)
+        .doc(followUserId)
+        .collection(Paths.userNotifications)
+        .add(notification.toDocument());
   }
 
   @override
