@@ -57,7 +57,7 @@ class Post extends Equatable {
 
   static Future<Post> fromDocument(DocumentSnapshot doc) async {
     if (doc == null) return null;
-    final data = doc.data();
+    final data = doc.data() as Map<String, dynamic>;
     final authorRef = data['author'] as DocumentReference;
     if (authorRef != null) {
       final authorDoc = await authorRef.get();

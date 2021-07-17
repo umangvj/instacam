@@ -55,7 +55,7 @@ class Notif extends Equatable {
 
   static Future<Notif> fromDocument(DocumentSnapshot doc) async {
     if (doc == null) return null;
-    final data = doc.data();
+    final data = doc.data() as Map<String, dynamic>;
     final notifType = EnumToString.fromString(NotifType.values, data['type']);
 
     //From User
