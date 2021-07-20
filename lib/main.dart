@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
-          title: 'Flutter Instagram',
+          title: 'InstaCam',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
@@ -63,11 +63,12 @@ class MyApp extends StatelessWidget {
               color: Colors.white,
               iconTheme: const IconThemeData(color: Colors.black),
               textTheme: const TextTheme(
-                  headline6: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.w600,
-              )),
+                headline6: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
           onGenerateRoute: CustomRouter.onGenerateRoute,

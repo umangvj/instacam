@@ -24,7 +24,8 @@ class BottomNavBar extends StatelessWidget {
       showUnselectedLabels: false,
       onTap: onTap,
       items: items
-          .map((item, icon) => MapEntry(
+          .map(
+            (item, icon) => MapEntry(
               item.toString(),
               BottomNavigationBarItem(
                 label: '',
@@ -32,7 +33,9 @@ class BottomNavBar extends StatelessWidget {
                   icon,
                   size: 30.0,
                 ),
-              )))
+              ),
+            ),
+          )
           .values
           .toList(),
     );

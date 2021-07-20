@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram/repositories/repositories.dart';
 import 'package:flutter_instagram/screens/login/cubit/login_cubit.dart';
 import 'package:flutter_instagram/screens/screens.dart';
-import 'package:flutter_instagram/widgets/error_dialog.dart';
+import 'package:flutter_instagram/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = '/login';

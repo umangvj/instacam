@@ -26,7 +26,8 @@ class NavScreen extends StatelessWidget {
     BottomNavItem.notifications: GlobalKey<NavigatorState>(),
     BottomNavItem.profile: GlobalKey<NavigatorState>(),
   };
-  // reference to each one of our nav items i.e screens
+  // reference to each one of our nav items i.e screens. This helps to maintain state
+  //of each one of our screens.
 
   final Map<BottomNavItem, IconData> items = const {
     BottomNavItem.feed: Icons.home,

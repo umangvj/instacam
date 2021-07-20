@@ -25,25 +25,19 @@ class TabNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final routeBuilders = _routeBuilder();
     return Navigator(
-      // navigator maintains the stack based history of child widgets
       key: navigatorKey,
       initialRoute: tabNavigatorRoot,
-      onGenerateInitialRoutes: (_, initialRoute) {
+      onGenerateInitialRoutes: (_, __) {
         return [
           MaterialPageRoute(
             settings: RouteSettings(name: tabNavigatorRoot),
-            builder: (context) => routeBuilders[initialRoute](context),
+            builder: (context) => _getScreen(context, item),
           )
         ];
       },
       onGenerateRoute: CustomRouter.onGenerateNestedRoute,
     );
-  }
-
-  Map<String, WidgetBuilder> _routeBuilder() {
-    return {tabNavigatorRoot: (context) => _getScreen(context, item)};
   }
 
   Widget _getScreen(BuildContext context, BottomNavItem item) {
